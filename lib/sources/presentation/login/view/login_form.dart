@@ -58,7 +58,7 @@ class _LoginBodyState extends State<LoginForm> {
                       title: "Log in",
                       onPressed: () {
                         KeyboardUtil.hideKeyboard(context);
-                        Navigator.of(context).pushReplacementNamed(AppRoute.dashboard);
+                        Navigator.of(context).pushNamed(AppRoute.dashboard);
                       },
                     ),
                     const SizedBox(height: AppSize.inset),
@@ -109,10 +109,10 @@ class UserNameInput extends StatelessWidget {
       builder: (context, state) {
         return AppTextfield(
           controller: textController,
-          maxLength: 254,
+          // maxLength: 254,
           title: LocaleKeys.emailAddressTitle.value,
-          placeHolder: LocaleKeys.emailAddressPlaceholder.value,
-          validator: (_) => state.usernameValidation,
+          // placeHolder: LocaleKeys.emailAddressPlaceholder.value,
+          // validator: (_) => state.usernameValidation,
           onChanged: (username) {
             context.read<LoginBloc>().add(UsernameNumberChanged(username));
           },
@@ -131,10 +131,10 @@ class _PasswordInput extends StatelessWidget {
         return AppTextfield(
           obscureSign: "•",
           title: LocaleKeys.passwordTitle.value,
-          placeHolder: LocaleKeys.enterPassword.value,
+          // placeHolder: LocaleKeys.enterPassword.value,
           isObscure: true,
           textInputType: TextInputType.visiblePassword,
-          validator: (_) => state.passwordValidation,
+          // validator: (_) => state.passwordValidation,
           onChanged: (password) {
             context.read<LoginBloc>().add(PasswordChanged(password));
           },

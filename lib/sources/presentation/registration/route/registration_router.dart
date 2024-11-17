@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lgs_revpro/sources/di/injector.dart';
 
 import '../pages/account_otp_verify/account_otp_verify.dart';
 import '../pages/confirm_pin/confirm_pin_page.dart';
@@ -12,17 +14,26 @@ class RegistrationRouter {
     switch (settings.name) {
       case RegistrationRoute.newUsernameVerify:
         return MaterialPageRoute(
-          builder: (_) => const UsernameVerifyPage(),
+          builder: (_) => BlocProvider(
+            create: (context) => sl<UsernameVerifyBloc>(),
+            child: const UsernameVerifyPage(),
+          ),
         );
 
       case RegistrationRoute.otpVerify:
         return MaterialPageRoute(
-          builder: (_) => const AccountOtpVerifyPage(),
+          builder: (_) => BlocProvider(
+            create: (context) => sl<AccountOtpVerifyBloc>(),
+            child: const AccountOtpVerifyPage(),
+          ),
         );
 
       case RegistrationRoute.registerForm:
         return MaterialPageRoute(
-          builder: (_) => const RegisterFormPage(),
+          builder: (_) => BlocProvider(
+            create: (context) => sl<RegisterFormBloc>(),
+            child: const RegisterFormPage(),
+          ),
         );
 
       case RegistrationRoute.setNetPin:

@@ -18,7 +18,7 @@ class _RegisterPersonalInfoPageState extends State<RegisterFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: MyAppBar(backButtonAction: cancelRegistration),
+      appBar: MyAppBar(),
       body: const RegisterForm(),
     );
   }

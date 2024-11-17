@@ -142,9 +142,8 @@ class FullNameInput extends StatelessWidget {
       builder: (context, state) {
         return AppTextfield(
           inputFormatters: [FilteringTextInputFormatter.allow(RegExp("[a-z A-Z]"))],
-          title: "${LocaleKeys.fullName.value}*",
+          title: LocaleKeys.fullName.value,
           textCapitalization: TextCapitalization.words,
-          placeHolder: LocaleKeys.enterFullName.value,
           textInputType: TextInputType.name,
           onChanged: (fullName) {
             context.read<RegisterFormBloc>().add(FullNameChanged(fullName));
@@ -193,7 +192,7 @@ class PasswordInput extends StatelessWidget {
             FilteringTextInputFormatter.deny(RegExp(r'\s')), // Deny whitespace characters
           ],
           title: LocaleKeys.passwordTitle.value,
-          placeHolder: LocaleKeys.enterPassword.value,
+          // placeHolder: LocaleKeys.enterPassword.value,
           // validator: (_) => state.passwordValidation,
           onChanged: (password) {
             context.read<RegisterFormBloc>().add(PasswordChanged(password));
@@ -219,7 +218,7 @@ class ConfirmPasswordInput extends StatelessWidget {
             FilteringTextInputFormatter.deny(RegExp(r'\s')), // Deny whitespace characters
           ],
           title: LocaleKeys.confirmPassword.value,
-          placeHolder: LocaleKeys.confirmPasswordPlaceholder.value,
+          // placeHolder: LocaleKeys.confirmPasswordPlaceholder.value,
           // validator: (_) => state.confirmPasswordValidation,
           onChanged: (confirmPassword) {
             context.read<RegisterFormBloc>().add(ConfirmPasswordChanged(confirmPassword));
@@ -257,7 +256,6 @@ class DateOfBirthInput extends StatelessWidget {
           child: AbsorbPointer(
             child: AppTextfield(
               title: LocaleKeys.dateOfBirthTitle.value,
-              placeHolder: LocaleKeys.dateOfBirthPlaceholder.value,
               suffixIcon: const Icon(Icons.calendar_month),
               controller: dobDateEditingController,
             ),

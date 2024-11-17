@@ -1,5 +1,5 @@
 name: lgs_revpro
-description: "A new Flutter project."
+description: "LGS Rev Pro"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -44,6 +44,8 @@ dependencies:
   dropdown_search: ^5.0.5
   flutter_svg: ^2.0.14
   flutter_easyloading: ^3.0.5
+  provider: ^6.1.2
+  package_info_plus: ^8.1.1
 
 dev_dependencies:
   flutter_test:

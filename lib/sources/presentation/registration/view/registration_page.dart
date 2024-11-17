@@ -12,21 +12,21 @@ class RegistrationPage extends StatefulWidget {
 
 class _RegistrationPageState extends State<RegistrationPage> {
   final _navigatorKey = GlobalKey<NavigatorState>();
-  var currentRoute = RegistrationRoute.registerForm;
+  var currentRoute = RegistrationRoute.newUsernameVerify;
 
   @override
   Widget build(BuildContext context) {
     return NavigatorPopHandler(
       onPop: () {
-        if (currentRoute != RegistrationRoute.registerForm) {
+        // if (currentRoute != RegistrationRoute.registerForm) {
           _navigatorKey.currentState!.pop();
-        }
+        // }
       },
       child: Navigator(
         key: _navigatorKey,
-        initialRoute: RegistrationRoute.registerForm,
+        initialRoute: RegistrationRoute.newUsernameVerify,
         onGenerateRoute: (settings) {
-          currentRoute = settings.name ?? RegistrationRoute.registerForm;
+          currentRoute = settings.name ?? RegistrationRoute.newUsernameVerify;
           return RegistrationRouter.onGenerateRoute(settings, context);
         },
       ),

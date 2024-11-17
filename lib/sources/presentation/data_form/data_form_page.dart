@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lgs_revpro/sources/core/app_core.dart';
 import 'package:lgs_revpro/sources/presentation/widgets/app_bar/app_bar.dart';
+import 'package:lgs_revpro/sources/presentation/widgets/button/custom_button.dart';
 import 'package:lgs_revpro/sources/presentation/widgets/textfield/app_textfield.dart';
 
 class DataFormPage extends StatefulWidget {
@@ -14,7 +15,8 @@ class _DataFormPageState extends State<DataFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(title: "Data"),
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: const MyAppBar(title: "Tax Data"),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppSize.viewMargin),
         child: Column(
@@ -62,9 +64,13 @@ class _DataFormPageState extends State<DataFormPage> {
             AppTextfield(
               title: "Street registration fees",
             ),
+            const SizedBox(height: AppSize.inset),
             AppTextfield(
               title: "Right of Occupancy (C of O) fees",
             ),
+            const SizedBox(height: AppSize.viewSpacing),
+            const CustomButton(title: "Submit", onPressed: null),
+            const SizedBox(height: AppSize.viewSpacing),
           ],
         ),
       ),
